@@ -1,0 +1,383 @@
+:root {
+    --bg-color: #08090a;
+    --card-bg: #0f1011;
+    --text-main: #f7f8f8;
+    --text-muted: #787b82;
+    --border-color: #202122;
+    --btn-bg: #28282c;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter';
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-width: 420px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar {
+    width: 100%;
+    height: 112px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    border-bottom: 2px solid var(--border-color);
+    transition: height 0.3s ease;
+}
+
+.nav-left {
+    display: flex;
+    gap: 56px;
+}
+.nav-left a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.login-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.signup-btn {
+    background-color: var(--text-main);
+    color: #000;
+    width: 129px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.menu{
+    display: none; 
+    cursor: pointer;
+}
+.menu-icon {
+    width: 14px;
+    filter: invert(100%) brightness(200%);
+}
+
+.header-section {
+    text-align: center;
+    margin-top: 48px;
+    margin-bottom: 180px;
+    padding: 0 20px;
+}
+.header-section h1 {
+    font-size: 100px;
+    margin-bottom: 30px;
+    font-weight: 550;
+}
+.header-section p {
+    color: var(--text-muted);
+    font-size: 28px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    padding: 0 20px 100px 20px;
+    width: 100%;
+    max-width: 2000px;
+    flex-wrap: wrap;
+    margin-top: 27px; 
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 0; 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 999px; 
+    max-width: 461px;            
+    padding-top: 40px;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 910px;
+}
+
+/* page-big*/
+@media (min-width: 1025px) {
+    
+    .card:first-child {
+        border-top-left-radius: 16px;
+        border-bottom-left-radius: 16px;
+    }
+    .card:last-child {
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+
+    .card:nth-child(3) {
+        height: 1087px; 
+        transform: translateY(-27px); 
+        padding-top: 67px; 
+        border-radius: 16px; 
+        filter: brightness(125%); 
+        z-index: 10; 
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .card:nth-child(3) .action-btn {
+        background-color: var(--text-main);
+        color: #000000;
+    }
+
+    .card:nth-child(3) .hidden-text {
+        opacity: 1;
+        visibility: visible;
+        height: 20px;
+        margin-top: 30px; 
+    }
+    
+}
+
+.card-header {padding-left: 40px; border-bottom: 2px solid #202122;}
+.card-header h2 { font-size: 40px; margin-bottom: 20px; font-weight: 600; }
+.card-header .price { font-size: 28px; color: var(--text-main); margin-bottom: 20px; }
+.price-font{font-size:28px; color: #a0a0b0;}   
+
+.bill-section { height: 118px; display: flex; align-items: center; padding-left: 40px; border-bottom: 2px solid #202122;}
+.bill-font{ color: var(--text-muted); font-size: 24px;}
+.toggle-switch {
+    width: 57px;         
+    height: 36px;
+    background-color: #616acb;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 6px;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+.toggle-circle {
+    width: 25px;
+    height: 25px;
+    background-color: #ffffff;
+    border-radius: 50%; 
+}
+
+.features { list-style: none; flex-grow: 1; margin-top: 40px; font-size: 24px; padding-left: 40px; }
+.features li { margin-bottom: 30px; color: #d1d1d6; display: flex; align-items: flex-start; gap: 12px; }
+.feature-word {display: flex; align-items: center;}
+.underline {text-decoration: underline; text-underline-offset: 6px; }
+.underdot {text-decoration: underline dotted; text-underline-offset: 6px; }
+.blue-tick {
+    width: 24px; 
+    padding-top: 2px; 
+    filter: brightness(0) saturate(100%) invert(71%) sepia(66%) saturate(6825%) hue-rotate(216deg) brightness(86%) contrast(82%); 
+}     
+
+.btn-section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+.action-btn {
+    background-color: var(--btn-bg);
+    color: var(--text-main);
+    border: 2px var(--border-color);
+    border-radius: 16px;
+    font-size: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 373px;
+    height: 72px;
+}
+.action-btn:hover {
+    filter: brightness(125%);
+}
+
+.hidden-text {
+    color: var(--text-muted);
+    font-size: 24px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    margin-top: 0;
+    transition: all 0.3s ease;
+}
+.hidden-text a { color: var(--text-muted); text-decoration: underline; text-underline-offset: 6px; }
+
+/* page-small */
+@media (max-width: 1024px) {
+    .navbar {
+        height: 55px;
+        padding: 0 20px;
+        justify-content: flex-end;
+    }
+    .nav-left { display: none; }
+    .nav-right { gap: 8px; }
+    .login-link { font-size: 10px; margin-right: 10px; }
+    .signup-btn { width: 60px; height: 28px; border-radius: 8px; font-size: 10px; }
+    .menu { display: block; margin-left: 12px; }
+    
+    .header-section { margin-bottom: 40px; }
+    .header-section h1 { font-size: 40px; margin-bottom: 20px;}
+    .header-section p { font-size: 14px; }
+
+
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0; 
+        padding: 0 20px 50px 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 100%; 
+        height: auto; 
+        padding: 30px 0 30px 0; 
+        border-radius: 0; 
+        border-bottom: none; 
+    }
+    
+    .card-header h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .card-header .price {
+        font-size: 18px;
+    }
+    .price-font{
+        font-size: 14px;
+    }
+
+    .bill-section {
+        height: 60px;
+    }
+    .bill-font {
+        font-size: 16px;
+    }
+    .toggle-switch {
+        width: 28px;         
+        height: 18px;               
+        padding: 0 3px;
+        margin-right: 10px;                
+    }
+    .toggle-circle {
+        width: 12px;
+        height: 12px;
+    }
+    
+
+    .card-content {
+        height: auto; 
+    }
+    .features {
+        margin-top: 25px;
+    }
+    .features li {
+        margin-bottom: 20px;
+    }
+    .blue-tick {
+        width: 16px;
+    }
+    .feature-words {
+        font-size: 16px;
+    }
+    .underline {
+        text-underline-offset: 4px;
+    }
+    .underdot {
+        text-underline-offset: 4px;
+    }
+
+    .action-btn {
+        margin-top: 40px;
+        font-size: 16px;
+    }
+    .hidden-text {
+        font-size: 16px;
+    }
+
+    .card:first-child {
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+    }
+    .card:last-child {
+        border-bottom: 1px solid var(--border-color); 
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+
+    .card-header, .bill-section, .features {
+        padding-left: 20px; 
+    }
+    .btn-section {
+        margin-top: 30px;
+        height: 48px;
+    }
+    .action-btn {
+        margin: 0;
+        max-width: 80%;
+        height: 48px;
+    }
+    .action-btn:hover {
+        filter: brightness(125%);
+    }
+
+    .features li {
+        align-items: flex-start; 
+    }
+    .features li::before {
+        margin-top: 4px; 
+    }
+
+    .card:nth-child(3){
+        filter: brightness(125%);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+    .card:nth-child(3) .action-btn {
+        background-color: var(--text-main);
+        color: #000;
+    }
+    .card:nth-child(3) .hidden-text {
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+        margin-top: 15px;
+    }
+}
